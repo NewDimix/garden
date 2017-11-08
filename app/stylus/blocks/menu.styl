@@ -1,0 +1,141 @@
+menu__icon()
+	cursor pointer
+	border-radius 1px
+	height 3px
+	width 25px
+	background white
+	position absolute
+	display block
+	content ''
+	transition all .2s ease .2s, transform .2s ease 0s
+
+.menu
+	position relative
+	font-family 'HelveticaNeue-CondensedBold'
+	&__btn
+		width 100%
+		background-color $green-dark-color
+		width 100%
+		text-align left
+		position relative
+		cursor pointer
+		user-select none
+		@media (min-width 480px)
+			display none
+		&.open
+			.menu__icon
+				background transparent
+				&:before
+					transform rotate(45deg)
+					top 0
+					transition all .2s ease 0s, transform .2s ease .2s
+				&:after
+					transform rotate(-45deg)
+					bottom 0
+					transition all .2s ease 0s, transform .2s ease .2s
+	&__icon
+		position absolute
+		top 50%
+		left 10px
+		transform translatey(-50%)
+		menu__icon()
+		&:before, &:after
+			menu__icon()
+		&:before
+			top 8px
+		&:after
+			bottom 8px
+	&__title
+		color white
+		margin-left 45px
+		line-height 40px
+		text-transform uppercase
+		font-size 18px
+		font-weight 700
+	&__ul
+		list-style none
+		margin 0
+		padding 0
+		position relative
+		top 100%
+		left 0
+		width 100%
+		background-color lightness($green-dark-color, 40%)
+		z-index 9999
+		max-height 0
+		overflow hidden
+		transition all .4s ease-out 0s
+		&.open
+			max-height 270px
+		@media (min-width 480px)
+			position static
+			background-color transparent
+			display block
+			text-align center
+			max-height 50000px
+		@media (min-width 768px)
+			text-align right
+		li 
+			display block
+			margin 0
+			box-sizing border-box
+			position relative
+			border-top 1px solid $green-dark-color
+			@media (min-width 480px)
+				display inline-block
+				margin-left 6%
+				border none
+				&:last-child
+					border-bottom none
+			@media (min-width 768px)
+				margin-left 23px
+			&:first-child
+				margin-left 0
+				border none
+			&:last-child
+				border-bottom 1px solid $green-dark-color
+			a 
+				display inline-block
+				width 100%
+				font-size 14px
+				font-weight 700
+				text-transform uppercase
+				color #fff
+				text-decoration none
+				padding 17px
+				@media (min-width 480px)
+					padding 17px 0
+				@media (min-width 480px)
+					color $green-dark-color
+				&:after
+					@media (min-width 480px)
+						background-color $green-light-color
+						display block
+						content ""
+						height 1px
+						width 0%
+						left 50%
+						bottom 12px
+						position absolute
+						transition width .3s ease-in-out
+						transform translateX(-50%)
+				&:hover:after
+					@media (min-width 480px)
+						width 80%
+			&.active
+				a
+					color lightness($green-dark-color, 20%)
+					@media (min-width 480px)
+						color $green-light-color
+					&:after
+						@media (min-width 480px)
+							background-color $green-light-color
+							display block
+							content ""
+							height 1px
+							width 80%
+							left 50%
+							bottom 12px
+							position absolute
+							transition width .3s ease-in-out
+							transform translateX(-50%)

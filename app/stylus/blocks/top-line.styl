@@ -1,0 +1,79 @@
+icon-escargot()
+	background-image url(../img/sprite.png)
+	background-position -731px -179px
+	width 53px
+	height 27px
+	
+icon-search()
+	background-image url(../img/sprite.png)
+	background-color #fff
+	background-position -731px -236px
+	width 12px
+	height 12px
+
+.top-line
+	font-family 'HelveticaNeue-Roman'
+	font-size 0
+	border-bottom 1px solid #e4e4e4
+	@media (min-width 480px)
+		text-align right
+	&__subscribe
+		display block
+		font-size 11px
+		text-align center
+		padding 5px 0
+		vertical-align middle
+		text-decoration none
+		color $green-dark-color
+		border-bottom 1px solid #e4e4e4
+		box-sizing border-box
+		@media (min-width 480px)
+			border-bottom none
+			display inline-block
+			padding-right 19px
+			text-align right
+	&__search
+		padding 10px 0
+		position relative
+		text-align center
+		box-sizing border-box
+		@media (min-width 480px)
+			display inline-block
+			width 285px
+			text-align right
+			border-left 1px solid #e4e4e4
+			padding-right 14px
+	&__img
+		position absolute
+		left 40px
+		bottom 0
+		vertical-align middle
+		opacity 0
+		transition all 1.5s linear 
+		icon-escargot()
+		&.move
+			opacity 1
+			left 14px
+	&__input
+		font-size 11px
+		width 40%
+		min-width 148px
+		border 3px solid #e4e4e4
+		line-height 16px
+		margin-left 24px
+		padding-left 5px
+		padding-right 5px
+		outline none
+		vertical-align middle
+		@media (min-width 480px)
+			margin-left 0
+	&__btn
+		border none
+		outline none
+		vertical-align middle
+		margin-left 12px
+		icon-search()
+		&:hover
+			cursor pointer
+		&:active
+			transform scale(.9)

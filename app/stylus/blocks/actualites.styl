@@ -1,0 +1,84 @@
+icon-branche()
+	background-image url(../img/sprite.png)
+	background-position -242px -615px
+	width 99px
+	height 43px
+
+.actualites
+	text-align center
+	padding 30px 0 25px
+	background-color #fefefe
+	background-image repeating-linear-gradient(to bottom,rgb(228, 228, 228) 0%,rgb(255, 255, 255) 5px,rgb(255, 255, 255) 100%)
+	@media (min-width 480px)
+		padding 35px 0
+	&__title
+		margin 0
+		margin-bottom 20px
+		font-family 'HelveticaNeue-CondensedMedium'
+		text-transform uppercase
+		color $green-dark-color
+		font-size 21px
+		line-height 24px
+	&__item
+		display inline-block
+		position relative
+		height 251px
+		overflow hidden
+		&:hover
+			.actualites__desc
+				bottom 0
+	&__desc
+		position absolute
+		bottom -210px
+		width 100%
+		padding 50px 0
+		background-color rgba(188, 189, 38, 0.8)
+		transition all .5s ease
+		&:after
+			content ""
+			border-left 30px solid transparent
+			border-right 30px solid transparent
+			border-bottom 30px solid rgba(188, 189, 38, 0.8)
+			position absolute
+			right 50%
+			transform translateX(50%)
+			top -30px
+	&__text
+		font-family 'HelveticaNeue-Condensed'
+		color #ffffff
+		font-size 15px
+		margin 0
+		&_bold
+			font-family 'HelveticaNeue-CondensedBold'
+			margin-bottom 10px
+		&_link
+			display block
+			font-family 'HelveticaNeue-CondensedBold'
+			text-decoration none
+			margin-top 15px
+	&__button
+		display inline-block
+		margin-top 25px
+		border 1px solid $green-light-color
+		@media (min-width 480px)
+			margin-top 29px
+	&__button-img
+		display inline-block
+		background-color $green-light-color
+		vertical-align middle
+		icon-branche()
+	&__link
+		font-family 'HelveticaNeue-CondensedHeavy'
+		color $green-dark-color
+		font-size 13px
+		text-align center
+		text-decoration none
+		text-transform uppercase
+		padding 14px 5px
+		vertical-align middle
+		transition all .5s ease
+		@media (min-width 480px)
+			padding 14px 20px
+		&:hover
+			color white
+			background-color $green-light-color

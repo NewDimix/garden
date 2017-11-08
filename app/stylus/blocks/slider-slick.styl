@@ -1,0 +1,73 @@
+icon-prevArrow()
+	background-image url(../img/sprite.png)
+	background-position -770px -278px
+	width 9px
+	height 14px
+
+icon-nextArrow()
+	background-image url(../img/sprite.png)
+	background-position -731px -278px
+	width 9px
+	height 14px
+
+ 
+
+.slider-slick
+	&__item
+		height 371px
+		background-size cover
+		&_1
+			background url(../img/slider1.jpg) center no-repeat
+		&_2
+			background url(../img/slider2.jpg) center no-repeat
+		&_3
+			background url(../img/slider3.jpg) center no-repeat
+		&_4
+			background url(../img/slider4.jpg) center no-repeat
+	&__text
+		font-family 'HelveticaNeue-Italic'
+		color #ffffff
+		font-size 8vw
+		line-height 36px
+		margin 0
+		max-width 1130px
+		margin 0 auto
+		padding 20px 25px
+		@media (min-width 480px)
+			font-size 40px
+			padding 40px 25px
+	&__prev-wrap
+		width 36px
+		height 36px
+		border-radius 0 3px 3px 0
+		position absolute
+		top 50%
+		left 0
+		transform translateY(-50%)
+		z-index 9999
+		background-color white
+		opacity .8
+		transition opacity .3s ease
+		&:hover
+			opacity 1
+			cursor pointer
+	&__prev-img
+		icon-prevArrow()
+		position absolute
+		top 50%	
+		left 45%
+		transform translate(-50%, -50%)
+		opacity .8
+	&__next-wrap
+		@extend .slider-slick__prev-wrap
+		left inherit
+		right 0
+		background-color white
+		border-radius 3px 0 0 3px
+	&__next-img
+		icon-nextArrow()
+		position absolute
+		top 50%	
+		left 55%
+		transform translate(-50%, -50%)
+		opacity .8

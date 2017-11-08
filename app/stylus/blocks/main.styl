@@ -1,0 +1,16 @@
+.main
+	h2
+		display inline-block
+		position relative
+		&:before
+			content ""
+			width 25px
+			height 1px
+			background-color $green-dark-color
+			position absolute
+			top 12px
+			right -45px
+		&:after
+			@extend .main h2:before
+			right inherit
+			left -45px

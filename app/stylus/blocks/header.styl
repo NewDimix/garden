@@ -1,0 +1,38 @@
+icon-logoGarden()
+	background-image url(../img/sprite.png)
+	background-position 0px 0px
+	width 285px
+	height 139px
+
+.header
+	&__top-line
+		max-width 1170px
+		margin 0 auto
+		@media (min-width 480px)
+			margin 0 -20px
+		@media (min-width 768px)
+			margin 0 auto
+	&__menu-wrap
+		max-width 1170px
+		margin 0 auto
+		position relative
+		@media (min-width 480px)
+			margin 0 -20px 10px
+		@media (min-width 768px)
+			margin 0 auto 10px
+		h1
+			margin 0
+	&__logo
+		display block
+		margin 15px auto
+		icon-logoGarden()
+		@media (min-width 768px)
+			margin 0
+			position absolute
+			top 50%
+			transform translateY(-50%)
+	&__owl
+		display none
+		@media (min-width 768px)
+			display block
+			text-align right
