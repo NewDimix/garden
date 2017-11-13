@@ -1,0 +1,85 @@
+.additionally
+	text-align center
+	padding 20px 0 25px
+	@media (min-width 480px)
+		padding 47px 0
+	&__title
+		section-title()
+		margin-bottom 32px
+	&__items-wrap
+		margin 0 auto
+	&__item
+		position relative
+		display inline-block
+		width 90%
+		height 219px
+		background url(../img/additionally-back.png) 0 100% no-repeat
+		background-color $green-light-color
+		padding-top 140px
+		box-sizing border-box
+		margin 0 1.5% 16px
+		vertical-align top
+		overflow hidden
+		@media (min-width 480px)
+			width 47%
+		@media (min-width 768px)
+			width 30%
+		@media (min-width 992px)
+			width 23%
+			margin 0 1% 16px
+		@media (min-width 1200px)
+			width 19%
+			max-width 219px
+			margin 0 .5% 16px
+		@media (min-width 1350px)
+			margin 0
+			margin-right 19px
+		&:last-child
+			@media (min-width 1350px)
+				margin-right 0
+		&:hover
+			.additionally__name:after
+				width 100%
+			&:before
+				top 38%
+		&:before
+			content ""
+			position absolute
+			top 43%
+			left 50%
+			transform translate(-50%, -50%)
+			transition all .3s cubic-bezier(.73,-2,.21,3)
+		&_1
+			&:before
+				sprite-additionally-icon1()
+		&_2
+			&:before
+				sprite-additionally-icon2()
+		&_3
+			&:before
+				sprite-additionally-icon3()
+		&_4
+			&:before
+				sprite-additionally-icon4()
+		&_5
+			&:before
+				sprite-additionally-icon5()
+	&__name
+		display inline-block
+		margin 0 8px
+		font-weight 500
+		color white
+		font-size 18px
+		text-transform uppercase
+		position relative
+		&:after
+			background-color white
+			display block
+			content ""
+			height 2px
+			width 0%
+			left 50%
+			bottom -5px
+			position absolute
+			transition width .2s ease-in-out
+			transform translateX(-50%)

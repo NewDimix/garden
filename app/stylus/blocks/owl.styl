@@ -1,15 +1,3 @@
-icon-owlItem()
-	background-image url(../img/sprite.png)
-	background-position -731px -90px
-	width 47px
-	height 59px
-
-icon-owlBack()
-	  background-image url(../img/sprite.png)
-	  background-position -0px -615px
-	  width 242px
-	  height 63px
-	
 @keyframes jump {
 	0% {
 		opacity 0
@@ -90,19 +78,19 @@ icon-owlBack()
 	position relative
 	&__text
 		display inline-block
-		width 202px
-		font-family 'HelveticaNeue-CondensedBold'
+		width 206px
+		font-weight 700
 		color $green-dark-color
 		font-size 15px
-		line-height 20px
+		line-height 18px
 		text-align center
 		text-transform uppercase
-		margin-right 30px
+		margin 20px 22px 20px 0
 		padding 15px 0
 		border 3px solid $brown-color
 		border-radius 10px
 		box-sizing border-box
-		vertical-align middle
+		vertical-align top
 		position relative
 		transition all 1s ease
 		opacity 0
@@ -128,16 +116,22 @@ icon-owlBack()
 		&.visible
 			opacity 1
 			transform scale(1) translateX(0)
+		> p
+			margin 0
 	&__img-back
-		vertical-align middle
+		position relative
+		margin-top 40px
+		margin-right 7px
 		display inline-block
-		icon-owlBack()
-	&__img-owl
-		position absolute
-		top 35px
-		right 160px
-		opacity 0
-		icon-owlItem()
+		sprite-owl-back()
+		&:before
+			content ""
+			position absolute
+			top 4px
+			left 30px
+			opacity 0
+			sprite-owl-item()
 		&.jump
-			opacity 1
-			animation jump 4s linear
+			&:before
+				opacity 1
+				animation jump 4s linear

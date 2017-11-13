@@ -17,8 +17,8 @@ var path = {
   app: {
     js: workDir + 'app/js/**/*.js',
     style: workDir + 'app/stylus/*.styl',
-    img: workDir + 'app/img/**/*.*',
-    imgSprite: workDir + 'app/img/icon/*.*',
+    img: workDir + 'app/img/*.*',
+    imgSprite: workDir + 'app/img/sprite/*.*',
     html: workDir + 'app/html/*.html'
   },
   dist: {
@@ -74,13 +74,10 @@ gulp.task('sprite', function() {
                 imgName: 'sprite.png',
                 cssName: 'sprite.css',
                 algorithm: 'binary-tree',
-				padding: 5,
-                cssVarMap: function(sprite) {
-                    sprite.name = sprite.name
-                }
+				padding: 20
             }));
 
-    spriteData.img.pipe(gulp.dest('app/')); // путь, куда сохраняем картинку
+    spriteData.img.pipe(gulp.dest('app/img/')); // путь, куда сохраняем картинку
     spriteData.css.pipe(gulp.dest('app/')); // путь, куда сохраняем стили
 });
 
@@ -100,9 +97,9 @@ gulp.task('js-libs', function () {
     'app/js/libs/jquery/dist/jquery.min.js',
     'app/js/libs/slick-1.8.0/slick/slick.min.js'
   ])
-    .pipe(concat('libs.min.js'))
+    .pipe(concat('vendor.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest(path.dist.jsLibs))
+    .pipe(gulp.dest(path.dist.js))
 });
 
 gulp.task('sync', function () {

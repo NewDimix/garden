@@ -8,10 +8,78 @@ menu__icon()
 	display block
 	content ''
 	transition all .2s ease .2s, transform .2s ease 0s
+	
+ul()
+		list-style none
+		margin 0
+		padding 0
+		position relative
+		top 100%
+		left 0
+		width 100%
+		background-color white
+		overflow hidden
+		z-index 9999
+		height auto
+		display none
+		transition all 0s ease-out 0s
+		@media (min-width 480px)
+			position static
+			background-color transparent
+			display block
+			text-align center
+			overflow visible
+		@media (min-width 768px)
+			text-align right
+			
+li()
+	display block
+	margin 0
+	box-sizing border-box
+	position relative
+	border-bottom 1px solid lightness($green-dark-color, 40%)
+	@media (min-width 480px)
+		display inline-block
+		margin-left 6%
+		border none
+		&:first-child
+			margin-left 0
+		&:last-child
+			border-bottom none
+	@media (min-width 768px)
+		margin-left 28px
+		
+a()
+	display inline-block
+	box-sizing border-box
+	width 100%
+	font-size 14px
+	font-weight 700
+	text-transform uppercase
+	color $green-dark-color
+	text-decoration none
+	padding 17px
+	@media (min-width 480px)
+		padding 17px 0 32px
+		color $green-dark-color
+	&:after
+		@media (min-width 480px)
+			background-color $green-light-color
+			display block
+			content ""
+			height 1px
+			width 0%
+			left 50%
+			top 55%
+			position absolute
+			transition width .3s ease-in-out
+			transform translateX(-50%)
+	&:hover:after
+		@media (min-width 480px)
+			width 80%
 
 .menu
 	position relative
-	font-family 'HelveticaNeue-CondensedBold'
 	&__btn
 		width 100%
 		background-color $green-dark-color
@@ -53,78 +121,33 @@ menu__icon()
 		font-size 18px
 		font-weight 700
 	&__ul
-		list-style none
-		margin 0
-		padding 0
-		position relative
-		top 100%
-		left 0
-		width 100%
-		background-color lightness($green-dark-color, 40%)
-		z-index 9999
-		max-height 0
-		overflow hidden
-		transition all .4s ease-out 0s
-		&.open
-			max-height 270px
-		@media (min-width 480px)
-			position static
-			background-color transparent
-			display block
-			text-align center
-			max-height 50000px
-		@media (min-width 768px)
-			text-align right
-		li 
-			display block
-			margin 0
-			box-sizing border-box
-			position relative
-			border-top 1px solid $green-dark-color
-			@media (min-width 480px)
-				display inline-block
-				margin-left 6%
-				border none
-				&:last-child
-					border-bottom none
-			@media (min-width 768px)
-				margin-left 23px
-			&:first-child
-				margin-left 0
-				border none
+		ul()
+		> li 
+			li()
 			&:last-child
-				border-bottom 1px solid $green-dark-color
-			a 
-				display inline-block
-				width 100%
-				font-size 14px
-				font-weight 700
-				text-transform uppercase
-				color #fff
-				text-decoration none
-				padding 17px
-				@media (min-width 480px)
-					padding 17px 0
-				@media (min-width 480px)
-					color $green-dark-color
-				&:after
+				> ul
 					@media (min-width 480px)
-						background-color $green-light-color
-						display block
-						content ""
-						height 1px
-						width 0%
-						left 50%
-						bottom 12px
-						position absolute
-						transition width .3s ease-in-out
-						transform translateX(-50%)
-				&:hover:after
+						right -35px
+					@media (min-width 768px)
+						right -20px
+					@media (min-width 1470px)
+						right inherit
+			&:nth-last-child(2)
+				> ul
 					@media (min-width 480px)
-						width 80%
+						right -70px
+					@media (min-width 1470px)
+						right inherit
+			> a 
+				a()
+			> span
+				@extend .menu__ul > li > a
+				cursor pointer
+				&:before
+					@media (min-width 480px)
+						display none
 			&.active
-				a
-					color lightness($green-dark-color, 20%)
+				> a
 					@media (min-width 480px)
 						color $green-light-color
 					&:after
@@ -139,3 +162,95 @@ menu__icon()
 							position absolute
 							transition width .3s ease-in-out
 							transform translateX(-50%)
+				> span
+					@extend .menu__ul > li.active > a
+			> ul
+				ul()
+				background-color white
+				@media (min-width 480px)
+					display none
+					position absolute
+					left inherit
+					top 100%
+					width 170px
+					text-align left
+					background-color white
+					box-shadow 0 4px 10px rgba(0,0,0,0.5)
+				@media (min-width 768px)
+					width 200px
+					text-align left
+				> li 
+					li()
+					border-bottom none
+					border-top 1px solid #ccc
+					&:first-child
+						@media (max-width 480px)
+							border-top-color lightness($green-dark-color, 40%)
+					@media (min-width 480px)
+						display block
+						margin-left 0
+						border-top 1px solid #ccc
+					@media (min-width 768px)
+						margin-left 0
+					> a
+						a()
+						padding 10px 5px 10px 34px
+						color lightness($green-dark-color, 35%)
+						@media (min-width 480px)
+							padding 10px 5px 10px 15px
+							padding-right 20px
+							$green-dark-color
+						&:after
+							display none !important
+					> span
+						@extend .menu__ul > li > ul > li > a
+						cursor pointer
+						&.open
+							background-color rgba(177, 255, 0, 0.1)
+					> ul
+						ul()
+						top 0
+						@media (min-width 480px)
+							display none
+							text-align left
+						@media (min-width 768px)
+							text-align left
+						> li 
+							li()
+							border-bottom 0
+							border-top 1px solid #ccc
+							@media (min-width 480px)
+								display block
+								margin-left 0
+								border-top 1px solid #ccc
+							@media (min-width 768px)
+								margin-left 0
+							> a
+								a()
+								color $green-light-color
+								padding 10px 5px 10px 51px
+								@media (min-width 480px)
+									padding 10px 5px 10px 23px
+									color $green-light-color
+								&:after
+									display none !important
+		span
+			position relative
+			&:before
+				content ""
+				position absolute
+				right 5%
+				top 50%
+				transform translateY(-70%) rotate(45deg)
+				width 5px
+				height 5px
+				border 4px solid $green-light-color
+				border-left-color transparent
+				border-top-color transparent
+				transition all .5s ease
+			&.open
+				&:before
+					border 4px solid $green-light-color
+					border-right-color transparent
+					border-bottom-color transparent
+					transform translateY(-30%) rotate(45deg)

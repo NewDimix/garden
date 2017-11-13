@@ -1,39 +1,29 @@
-icon-branche()
-	background-image url(../img/sprite.png)
-	background-position -242px -615px
-	width 99px
-	height 43px
-
-.actualites
+.news
 	text-align center
 	padding 30px 0 25px
 	background-color #fefefe
 	background-image repeating-linear-gradient(to bottom,rgb(228, 228, 228) 0%,rgb(255, 255, 255) 5px,rgb(255, 255, 255) 100%)
 	@media (min-width 480px)
-		padding 35px 0
+		padding 46px 0
 	&__title
-		margin 0
-		margin-bottom 20px
-		font-family 'HelveticaNeue-CondensedMedium'
-		text-transform uppercase
-		color $green-dark-color
-		font-size 21px
-		line-height 24px
+		section-title()
+		margin-bottom 30px
 	&__item
 		display inline-block
 		position relative
 		height 251px
 		overflow hidden
+		outline none
 		&:hover
-			.actualites__desc
+			.news__desc
 				bottom 0
 	&__desc
 		position absolute
-		bottom -210px
+		bottom -109%
 		width 100%
 		padding 50px 0
 		background-color rgba(188, 189, 38, 0.8)
-		transition all .5s ease
+		transition all .5s linear
 		&:after
 			content ""
 			border-left 30px solid transparent
@@ -44,41 +34,44 @@ icon-branche()
 			transform translateX(50%)
 			top -30px
 	&__text
-		font-family 'HelveticaNeue-Condensed'
+		font-weight 300
 		color #ffffff
 		font-size 15px
 		margin 0
 		&_bold
-			font-family 'HelveticaNeue-CondensedBold'
+			font-weight 500
 			margin-bottom 10px
 		&_link
 			display block
-			font-family 'HelveticaNeue-CondensedBold'
+			font-weight 500
 			text-decoration none
 			margin-top 15px
 	&__button
+		position relative
 		display inline-block
+		height 43px
+		line-height 43px
 		margin-top 25px
 		border 1px solid $green-light-color
-		@media (min-width 480px)
-			margin-top 29px
-	&__button-img
-		display inline-block
-		background-color $green-light-color
-		vertical-align middle
-		icon-branche()
-	&__link
-		font-family 'HelveticaNeue-CondensedHeavy'
+		font-weight 900
 		color $green-dark-color
 		font-size 13px
-		text-align center
 		text-decoration none
 		text-transform uppercase
-		padding 14px 5px
-		vertical-align middle
+		padding 0 5px 0 103px
+		box-sizing border-box
 		transition all .5s ease
 		@media (min-width 480px)
-			padding 14px 20px
+			margin-top 29px
+			padding 0 20px 0 118px
+			max-width 80%
 		&:hover
 			color white
 			background-color $green-light-color
+		&:before
+			content ""
+			position absolute
+			left 0
+			top -1px
+			background-color $green-light-color
+			sprite-ramification()

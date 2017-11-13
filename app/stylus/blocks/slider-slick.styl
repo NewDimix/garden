@@ -1,49 +1,41 @@
-icon-prevArrow()
-	background-image url(../img/sprite.png)
-	background-position -770px -278px
-	width 9px
-	height 14px
-
-icon-nextArrow()
-	background-image url(../img/sprite.png)
-	background-position -731px -278px
-	width 9px
-	height 14px
-
- 
-
 .slider-slick
 	&__item
+		outline none
 		height 371px
-		background-size cover
 		&_1
-			background url(../img/slider1.jpg) center no-repeat
+			background url(../img/slider1.jpg) no-repeat
+			background-size cover
 		&_2
-			background url(../img/slider2.jpg) center no-repeat
+			background url(../img/slider2.jpg) no-repeat
+			background-size cover
 		&_3
-			background url(../img/slider3.jpg) center no-repeat
+			background url(../img/slider3.jpg) no-repeat
+			background-size cover
 		&_4
-			background url(../img/slider4.jpg) center no-repeat
+			background url(../img/slider4.jpg) no-repeat
+			background-size cover
 	&__text
-		font-family 'HelveticaNeue-Italic'
+		font-family 'HelveticaNeue-Roman'
+		font-style italic
 		color #ffffff
 		font-size 8vw
 		line-height 36px
 		margin 0
-		max-width 1130px
+		max-width 1111px
 		margin 0 auto
 		padding 20px 25px
 		@media (min-width 480px)
 			font-size 40px
-			padding 40px 25px
+			padding 44px 25px
+		> p
+			margin 0
 	&__prev-wrap
 		width 36px
 		height 36px
 		border-radius 0 3px 3px 0
 		position absolute
-		top 50%
+		top 48%
 		left 0
-		transform translateY(-50%)
 		z-index 9999
 		background-color white
 		opacity .8
@@ -52,7 +44,7 @@ icon-nextArrow()
 			opacity 1
 			cursor pointer
 	&__prev-img
-		icon-prevArrow()
+		sprite-prev-arrow()
 		position absolute
 		top 50%	
 		left 45%
@@ -65,7 +57,7 @@ icon-nextArrow()
 		background-color white
 		border-radius 3px 0 0 3px
 	&__next-img
-		icon-nextArrow()
+		sprite-next-arrow()
 		position absolute
 		top 50%	
 		left 55%
