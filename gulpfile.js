@@ -17,12 +17,11 @@ var path = {
   app: {
     js: workDir + 'app/js/**/*.js',
     style: workDir + 'app/stylus/*.styl',
-    img: workDir + 'app/img/*.*',
+    img: workDir + 'app/img/img/*/*.*',
     imgSprite: workDir + 'app/img/sprite/*.*',
     html: workDir + 'app/html/*.html'
   },
   dist: {
-    jsLibs: workDir + 'dist/js/libs/',
     js: workDir + 'dist/js/',
     css: workDir + 'dist/css/',
     img: workDir + 'dist/img/',
@@ -39,7 +38,7 @@ var path = {
 gulp.task('html', function () {
   gulp.src(path.app.html)
     .pipe(rigger())
-    .pipe(htmlmin({collapseWhitespace: true}))
+//    .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest(path.dist.html))
     .pipe(browserSync.reload({
       stream: true
@@ -55,6 +54,20 @@ gulp.task('css', function () {
         cascade: false
     }))
     .pipe(cleanCss())
+    .pipe(gulp.dest(path.dist.css))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+});
+
+gulp.task('css-vendors', function () {
+  return gulp.src([
+    'node_modules/normalize.css/normalize.css',
+    'node_modules/slick-carousel/slick/slick.css',
+    'node_modules/slick-carousel/slick/slick-theme.css'
+  ])
+    .pipe(cleanCss())
+	.pipe(concat('vendor.min.css'))
     .pipe(gulp.dest(path.dist.css))
     .pipe(browserSync.reload({
       stream: true
@@ -92,10 +105,10 @@ gulp.task('js', function () {
     }))
 });
 
-gulp.task('js-libs', function () {
+gulp.task('js-vendors', function () {
   return gulp.src([
-    'app/js/libs/jquery/dist/jquery.min.js',
-    'app/js/libs/slick-1.8.0/slick/slick.min.js'
+    'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/slick-carousel/slick/slick.min.js'
   ])
     .pipe(concat('vendor.min.js'))
     .pipe(uglify())
@@ -111,7 +124,7 @@ gulp.task('sync', function () {
   });
 });
 
-gulp.task('watch', ['sync', 'css', 'html', 'js-libs', 'js', 'img'], function () {
+gulp.task('watch', ['sync', 'css-vendors', 'css', 'html', 'js-vendors', 'js', 'img'], function () {
   gulp.watch(path.watch.style, ['css']);
   gulp.watch(path.watch.html, ['html']);
   gulp.watch(path.watch.js, ['js']);

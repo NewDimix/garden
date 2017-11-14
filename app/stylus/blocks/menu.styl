@@ -35,7 +35,6 @@ ul()
 li()
 	display block
 	margin 0
-	box-sizing border-box
 	position relative
 	border-bottom 1px solid lightness($green-dark-color, 40%)
 	@media (min-width 480px)
@@ -51,7 +50,6 @@ li()
 		
 a()
 	display inline-block
-	box-sizing border-box
 	width 100%
 	font-size 14px
 	font-weight 700
@@ -60,7 +58,7 @@ a()
 	text-decoration none
 	padding 17px
 	@media (min-width 480px)
-		padding 17px 0 32px
+		padding 17px 0
 		color $green-dark-color
 	&:after
 		@media (min-width 480px)
