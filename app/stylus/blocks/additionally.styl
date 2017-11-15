@@ -16,7 +16,7 @@
 		position relative
 		display inline-block
 		width 90%
-		height 219px
+		min-height 219px
 		background url(../img/additionally-back.png) 0 100% no-repeat
 		background-color $green-light-color
 		padding-top 140px
@@ -51,46 +51,54 @@
 			.additionally__name:after
 				width 100%
 				
-			&:before
-				top 38%
+		&:hover
+			.additionally__name:before
+				top -60px
 				
-		&:before
-			content ""
-			position absolute
-			top 43%
-			left 50%
-			transform translate(-50%, -50%)
-			transition all .3s cubic-bezier(.73,-2,.21,3)
-			
 		&_1
-			&:before
-				sprite-additionally-icon1()
+			.additionally__name
+				&:before
+					sprite-additionally-icon1()
 				
 		&_2
-			&:before
-				sprite-additionally-icon2()
+			.additionally__name
+				&:before
+					sprite-additionally-icon2()
 				
 		&_3
-			&:before
-				sprite-additionally-icon3()
+			.additionally__name
+				&:before
+					sprite-additionally-icon3()
 				
 		&_4
-			&:before
-				sprite-additionally-icon4()
+			.additionally__name
+				&:before
+					sprite-additionally-icon4()
 				
 		&_5
-			&:before
-				sprite-additionally-icon5()
+			.additionally__name
+				&:before
+					sprite-additionally-icon5()
 				
 	&__name
 		display inline-block
-		margin 0 8px
+		max-width 90%
+		margin 0 8px 8px
 		font-weight 500
 		color white
 		font-size 18px
 		text-transform uppercase
 		position relative
+		word-wrap break-word
 		
+		&:before
+			content ""
+			position absolute
+			top -45px
+			left 50%
+			transform translate(-50%, -50%)
+			transition all .3s cubic-bezier(.73,-2,.21,3)
+			
 		&:after
 			background-color white
 			display block
