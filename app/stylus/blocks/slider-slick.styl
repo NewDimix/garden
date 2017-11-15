@@ -2,18 +2,23 @@
 	&__item
 		outline none
 		height 371px
+		
 		&_1
 			background url(../img/slider/slider1.jpg) no-repeat
 			background-size cover
+			
 		&_2
 			background url(../img/slider/slider2.jpg) no-repeat
 			background-size cover
+			
 		&_3
 			background url(../img/slider/slider3.jpg) no-repeat
 			background-size cover
+			
 		&_4
 			background url(../img/slider/slider4.jpg) no-repeat
 			background-size cover
+			
 	&__text
 		font-family 'HelveticaNeue-Roman'
 		font-style italic
@@ -24,11 +29,14 @@
 		max-width 1111px
 		margin 0 auto
 		padding 20px 25px
+		
 		@media (min-width 480px)
 			font-size 40px
 			padding 44px 25px
+			
 		> p
 			margin 0
+			
 	&__prev-wrap
 		width 36px
 		height 36px
@@ -40,9 +48,11 @@
 		background-color white
 		opacity .8
 		transition opacity .3s ease
+		
 		&:hover
 			opacity 1
 			cursor pointer
+			
 	&__prev-img
 		sprite-prev-arrow()
 		position absolute
@@ -50,12 +60,14 @@
 		left 45%
 		transform translate(-50%, -50%)
 		opacity .8
+		
 	&__next-wrap
 		@extend .slider-slick__prev-wrap
 		left inherit
 		right 0
 		background-color white
 		border-radius 3px 0 0 3px
+		
 	&__next-img
 		sprite-next-arrow()
 		position absolute
@@ -74,16 +86,20 @@
 	list-style none
 	text-align center
 	height 12px
+	
 	li
 		vertical-align top
 		width 12px
 		height 12px
 		background-color #c3c1c0
 		border-radius 50%
+		
 		button
 			width 12px
 			height 12px
+			
 			&:before
 				display none
+				
 		&.slick-active
 			background-color white

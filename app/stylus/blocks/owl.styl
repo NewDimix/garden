@@ -76,6 +76,7 @@
 
 .owl
 	position relative
+	
 	&__text
 		display inline-block
 		width 206px
@@ -94,6 +95,7 @@
 		transition all 1s ease
 		opacity 0
 		transform scale(.3) translateX(300px)
+		
 		&:before
 			content ''
 			position absolute
@@ -103,6 +105,7 @@
 			right -24px
 			border 12px solid
 			border-color $brown-color transparent transparent $brown-color
+			
 		&:after
 			content ''
 			position absolute
@@ -112,17 +115,21 @@
 			right -17px
 			border 9px solid
 			border-color white transparent transparent white
+			
 		&.visible
 			opacity 1
 			transform scale(1) translateX(0)
+			
 		> p
 			margin 0
+			
 	&__img-back
 		position relative
 		margin-top 40px
 		margin-right 7px
 		display inline-block
 		sprite-owl-back()
+		
 		&:before
 			content ""
 			position absolute
@@ -130,6 +137,7 @@
 			left 30px
 			opacity 0
 			sprite-owl-item()
+			
 		&.jump
 			&:before
 				opacity 1

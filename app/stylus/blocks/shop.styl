@@ -4,69 +4,95 @@
 	background-color #fefefe
 	background-image repeating-linear-gradient(to bottom,rgb(207, 207, 207) 0%,rgb(228, 228, 228) 1px,rgb(255, 255, 255) 7px,rgb(255, 255, 255) 100%)
 	border-bottom 1px solid #e4e4e4
+	
 	@media (min-width 480px)
 		padding 53px 0 30px
+		
 	&__title
 		section-title()
 		margin-bottom 29px
+		
 	&__categories
 		max-width 1170px
 		margin 0 auto
+		
 		@media (min-width 480px)
 			margin 0 -20px
+			
 		@media (min-width 768px)
 			margin 0 auto
+			
 	&__item
 		position relative
 		display inline-block
 		width 46%
 		margin 0 2% 10px
 		vertical-align top
+		
 		@media (min-width 480px)
 			width 31.33333333333333333333%
 			margin 0 1% 13px
+			
 		@media (min-width 768px)
 			width 23%
+			
 		@media (min-width 992px)
 			width 18%
+			
 		@media (min-width 1200px)
 			margin 0
 			margin-right 36px
 			width 14%
+			
 		&:nth-child(-n+6)
 			@media (min-width 1200px)
 				margin-bottom 49px
+				
 		&:nth-child(6n)
 			@media (min-width 1200px)
 				margin-right 0
+				
 		&:hover
 			.shop__icon-wrap
 				background-color $brown-color
+				
 			.shop__icon
 				&_1
 					sprite-shop-icon1w()
+					
 				&_2
 					sprite-shop-icon2w()
+					
 				&_3
 					sprite-shop-icon3w()
+					
 				&_4
 					sprite-shop-icon4w()
+					
 				&_5
 					sprite-shop-icon5w()
+					
 				&_6
 					sprite-shop-icon6w()
+					
 				&_7
 					sprite-shop-icon7w()
+					
 				&_8
 					sprite-shop-icon8w()
+					
 				&_9
 					sprite-shop-icon9w()
+					
 				&_10
 					sprite-shop-icon10w()
+					
 				&_11
 					sprite-shop-icon11w()
+					
 				&_12
 					sprite-shop-icon12w()
+					
 	&__icon-wrap
 		position relative
 		display inline-block
@@ -76,12 +102,14 @@
 		height 66px
 		margin 13px 0 12px
 		transition all .2s ease
+		
 		&:after
 			content ""
 			position absolute
 			top -21px
 			right 12px
 			sprite-shop-icon-tracery()
+			
 	&__icon
 		position absolute
 		top 0
@@ -89,30 +117,43 @@
 		right 0
 		bottom 0
 		margin auto
+		
 		&_1
 			sprite-shop-icon1()
+			
 		&_2
 			sprite-shop-icon2()
+			
 		&_3
 			sprite-shop-icon3()
+			
 		&_4
 			sprite-shop-icon4()
+			
 		&_5
 			sprite-shop-icon5()
+			
 		&_6
 			sprite-shop-icon6()
+			
 		&_7
 			sprite-shop-icon7()
+			
 		&_8
 			sprite-shop-icon8()
+			
 		&_9
 			sprite-shop-icon9()
+			
 		&_10
 			sprite-shop-icon10()
+			
 		&_11
 			sprite-shop-icon11()
+			
 		&_12
 			sprite-shop-icon12()
+			
 	&__category-name
 		font-weight 400
 		color $brown-color
@@ -121,6 +162,7 @@
 		height 50px
 		padding 0 5px
 		overflow hidden
+		
 	&__category-link
 		position absolute
 		top 0

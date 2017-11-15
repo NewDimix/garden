@@ -1,8 +1,10 @@
 .main
 	flex 1 0 auto
+	
 	h2
 		display inline-block
 		position relative
+		
 		&:before
 			content ""
 			width 25px
@@ -11,6 +13,7 @@
 			position absolute
 			top 55%
 			right -45px
+			
 		&:after
 			@extend .main h2:before
 			right inherit

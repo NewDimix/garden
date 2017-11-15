@@ -3,20 +3,25 @@
 	padding 30px 0 25px
 	background-color #fefefe
 	background-image repeating-linear-gradient(to bottom,rgb(228, 228, 228) 0%,rgb(255, 255, 255) 5px,rgb(255, 255, 255) 100%)
+	
 	@media (min-width 480px)
 		padding 46px 0
+		
 	&__title
 		section-title()
 		margin-bottom 30px
+		
 	&__item
 		display inline-block
 		position relative
 		height 251px
 		overflow hidden
 		outline none
+		
 		&:hover
 			.news__desc
 				bottom 0
+				
 	&__desc
 		position absolute
 		bottom -109%
@@ -24,6 +29,7 @@
 		padding 50px 0
 		background-color rgba(188, 189, 38, 0.8)
 		transition all .5s linear
+		
 		&:after
 			content ""
 			border-left 30px solid transparent
@@ -33,19 +39,23 @@
 			right 50%
 			transform translateX(50%)
 			top -30px
+			
 	&__text
 		font-weight 300
 		color #ffffff
 		font-size 15px
 		margin 0
+		
 		&_bold
 			font-weight 500
 			margin-bottom 10px
+			
 		&_link
 			display block
 			font-weight 500
 			text-decoration none
 			margin-top 15px
+			
 	&__button
 		position relative
 		display inline-block
@@ -60,13 +70,16 @@
 		text-transform uppercase
 		padding 0 5px 0 103px
 		transition all .5s ease
+		
 		@media (min-width 480px)
 			margin-top 29px
 			padding 0 20px 0 118px
 			max-width 80%
+			
 		&:hover
 			color white
 			background-color $green-light-color
+			
 		&:before
 			content ""
 			position absolute
