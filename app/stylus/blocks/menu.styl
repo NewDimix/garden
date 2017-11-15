@@ -10,29 +10,29 @@ menu__icon()
 	transition all .2s ease .2s, transform .2s ease 0s
 	
 ul()
-		list-style none
-		margin 0
-		padding 0
-		position relative
-		top 100%
-		left 0
-		width 100%
-		background-color white
-		overflow hidden
-		z-index 9999
-		height auto
-		display none
-		transition all 0s ease-out 0s
-		
-		@media (min-width 480px)
-			position static
-			background-color transparent
-			display block
-			text-align center
-			overflow visible
-			
-		@media (min-width 768px)
-			text-align right
+	list-style none
+	margin 0
+	padding 0
+	position relative
+	top 100%
+	left 0
+	width 100%
+	background-color white
+	overflow hidden
+	z-index 9999
+	height auto
+	display none
+	transition all 0s ease-out 0s
+
+	@media (min-width 480px)
+		position static
+		background-color transparent
+		display block
+		text-align center
+		overflow visible
+
+	@media (min-width 768px)
+		text-align right
 			
 li()
 	display block
@@ -42,17 +42,17 @@ li()
 	
 	@media (min-width 480px)
 		display inline-block
-		margin-left 6%
+		margin-right 6%
 		border none
 		
-		&:first-child
-			margin-left 0
-			
-		&:last-child
-			border-bottom none
-			
 	@media (min-width 768px)
-		margin-left 28px
+		margin-right 28px
+		
+	&:last-child
+		@media (min-width 480px)
+			border-bottom none
+		@media (min-width 768px)
+			margin-right 0
 		
 a()
 	display inline-block
@@ -62,7 +62,7 @@ a()
 	text-transform uppercase
 	color $green-dark-color
 	text-decoration none
-	padding 17px
+	padding 17px 30px 17px 17px
 	
 	@media (min-width 480px)
 		padding 17px 0
@@ -96,6 +96,7 @@ a()
 		position relative
 		cursor pointer
 		user-select none
+		padding-left 45px
 		
 		@media (min-width 480px)
 			display none
@@ -132,7 +133,6 @@ a()
 			
 	&__title
 		color white
-		margin-left 45px
 		line-height 40px
 		text-transform uppercase
 		font-size 18px
@@ -224,15 +224,15 @@ a()
 							
 					@media (min-width 480px)
 						display block
-						margin-left 0
+						margin-right 0
 						border-top 1px solid #ccc
 						
 					@media (min-width 768px)
-						margin-left 0
+						margin-right 0
 						
 					> a
 						a()
-						padding 10px 5px 10px 34px
+						padding 10px 30px 10px 34px
 						color lightness($green-dark-color, 35%)
 						
 						@media (min-width 480px)
@@ -268,11 +268,11 @@ a()
 							
 							@media (min-width 480px)
 								display block
-								margin-left 0
+								margin-right 0
 								border-top 1px solid #ccc
 								
 							@media (min-width 768px)
-								margin-left 0
+								margin-right 0
 								
 							> a
 								a()

@@ -5,7 +5,7 @@
 	background-image repeating-linear-gradient(to bottom,rgb(228, 228, 228) 0%,rgb(255, 255, 255) 5px,rgb(255, 255, 255) 100%)
 	
 	@media (min-width 480px)
-		padding 46px 0
+		padding 35px 0 46px
 		
 	&__title
 		section-title()
@@ -56,12 +56,14 @@
 			text-decoration none
 			margin-top 15px
 			
+	&__items-wrap
+		margin-bottom 29px
+			
 	&__button
 		position relative
 		display inline-block
 		height 43px
 		line-height 43px
-		margin-top 25px
 		border 1px solid $green-light-color
 		font-weight 900
 		color $green-dark-color
@@ -73,7 +75,6 @@
 		overflow hidden
 		
 		@media (min-width 480px)
-			margin-top 29px
 			padding 0 20px 0 118px
 			max-width 80%
 			

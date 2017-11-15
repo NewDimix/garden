@@ -11,6 +11,7 @@ $('.js-menu-btn').click(function (event) {
   event.stopPropagation();
   $('.js-menu-content > li span + ul').slideUp();
   $('.js-menu-content > li span').removeClass('open');
+  $('.js-menu-btn').toggleClass('open');
 });
   
 $(document).mouseup(function (e) {
@@ -25,6 +26,7 @@ $(document).mouseup(function (e) {
   if (container.has(e.target).length === 0) {
     if ($(window).width() < '480') {
       $('.js-menu-content').slideUp();
+      $('.js-menu-btn').removeClass('open');
     }
   }
 });

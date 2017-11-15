@@ -20,22 +20,19 @@
 			background-size cover
 			
 	&__text
-		font-family 'HelveticaNeue-Roman'
-		font-style italic
-		color #ffffff
-		font-size 8vw
-		line-height 36px
-		margin 0
-		max-width 1111px
-		margin 0 auto
-		padding 20px 25px
-		
-		@media (min-width 480px)
-			font-size 40px
-			padding 44px 25px
-			
 		> p
-			margin 0
+			font-family 'HelveticaNeue-Roman'
+			font-style italic
+			color #ffffff
+			font-size 8vw
+			line-height 36px
+			max-width 1111px
+			margin 0 auto
+			padding 20px 25px
+
+			@media (min-width 480px)
+				font-size 40px
+				padding 44px 25px
 			
 	&__prev-wrap
 		width 36px
@@ -75,7 +72,10 @@
 		left 55%
 		transform translate(-50%, -50%)
 		opacity .8
-
+		
+.slick-dotted.slick-slider
+	margin-bottom 0
+		
 .slick-dots
 	position absolute
 	bottom 25px
