@@ -1,8 +1,7 @@
 .shop
 	text-align center
 	padding 30px 0 25px
-	background-color #fefefe
-	background-image repeating-linear-gradient(to bottom,rgb(207, 207, 207) 0%,rgb(228, 228, 228) 1px,rgb(255, 255, 255) 7px,rgb(255, 255, 255) 100%)
+	background-image repeating-linear-gradient(to bottom, rgb(207, 207, 207) 0%, rgb(228, 228, 228) 1px, transparent 7px, transparent 100%)
 	border-bottom 1px solid #e4e4e4
 	
 	@media (min-width 480px)
@@ -13,45 +12,74 @@
 		margin-bottom 29px
 		
 	&__categories
-		max-width 1170px
 		margin 0 auto
 		padding 0
-		
-		@media (min-width 480px)
-			margin 0 -20px
-			
-		@media (min-width 768px)
-			margin 0 auto
+		font-size 0
 			
 	&__item
 		position relative
 		display inline-block
-		width 46%
-		margin 0 2% 10px
+		margin-bottom 10px
 		vertical-align top
-		
-		@media (min-width 480px)
-			width 31.33333333333333333333%
-			margin 0 1% 13px
 			
-		@media (min-width 768px)
-			width 23%
+		@media (max-width 399px)
+			width 60%
+			
+			&:last-child
+				margin-bottom 0
+		
+		@media (min-width 400px) and (max-width 479px)
+			width 48%
+			margin-right 2%
+			
+			&:nth-child(2n)
+				margin-right 0
+				
+			&:nth-last-child(-n + 2)
+				margin-bottom 0
+		
+		@media (min-width 480px) and (max-width 623px)
+			width 32%
+			margin-right 2%
+			
+			&:nth-child(3n)
+				margin-right 0
+				
+			&:nth-last-child(-n + 3)
+				margin-bottom 0
+			
+		@media (min-width 624px) and (max-width 767px)
+			width 23.5%
+			margin-right 2%
+				
+			&:nth-child(4n)
+				margin-right 0
+				
+			&:nth-last-child(-n + 4)
+				margin-bottom 0
+			
+		@media (min-width 768px) and (max-width 991px)
+			width 18.4%
+			margin-right 2%
+				
+			&:nth-child(5n)
+				margin-right 0
+				
+			&:nth-last-child(-n + 2)
+				margin-bottom 0
+				
+			&:last-child
+				margin-right 0
 			
 		@media (min-width 992px)
-			width 18%
-			
-		@media (min-width 1200px)
-			margin 0
-			margin-right 36px
-			width 14%
-			
-		&:nth-child(-n+6)
-			@media (min-width 1200px)
-				margin-bottom 49px
+			width 15%
+			margin-right 2%
 				
-		&:nth-child(6n)
-			@media (min-width 1200px)
+			&:nth-child(6n)
 				margin-right 0
+				
+			&:nth-last-child(-n + 6)
+				margin-bottom 0
 				
 		&:hover
 			.shop__icon-wrap
@@ -165,6 +193,6 @@
 		font-size 21px
 		margin 0
 		min-height 50px
-		padding 0 5px
+		padding 0 10px
 		overflow hidden
 		word-wrap break-word

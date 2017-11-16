@@ -381,7 +381,7 @@
 </header>
 
 <main class="main">
-<div class="header__slider js-slider-slick">
+<div class="main__slider slider-slick js-main-slider">
 	<div class="slider-slick__item slider-slick__item_1">
 		<div class="slider-slick__text"><p>A votre service <br>depuis plus de 100 ans!</p></div>
 	</div>
@@ -410,7 +410,7 @@
 <div class="main__news news">
 	<h2 class="news__title">Actualités</h2>
 	
-	<div class="news__items-wrap js-variable-width">
+	<div class="news__items-wrap js-news-slider">
 		<div class="news__item">
 			<img class="news__img" src="img/news/news-img1.jpg" alt="News img 1">
 			
@@ -474,158 +474,160 @@
 	
 	<a class="news__button" href="#">Voir toutes les actualités</a>
 </div>
-	<div class="container">
 <div class="main__shop shop">
-	<h2 class="shop__title">En magasin</h2>
-	
-	<ul class="shop__categories">
-		<li class="shop__item">
-			<a href="#">
-				<div class="shop__icon-wrap">
-					<div class="shop__icon shop__icon_1"></div>
-				</div>
-				
-				<h3 class="shop__category-name">La pépinière</h3>
-			</a>
-		</li>
-		
-		<li class="shop__item">
-			<a href="#">
-				<div class="shop__icon-wrap">
-					<div class="shop__icon shop__icon_2"></div>
-				</div>
-				
-				<h3 class="shop__category-name">Les légumes et les plantes à massifs</h3>
-			</a>
-		</li>
+	<div class="container">
+		<h2 class="shop__title">En magasin</h2>
 
-		<li class="shop__item">
-			<a href="#">
-				<div class="shop__icon-wrap">
-					<div class="shop__icon shop__icon_3"></div>
-				</div>
-				
-				<h3 class="shop__category-name">Les plantes d’intérieur</h3>
-			</a>
-		</li>
+		<ul class="shop__categories">
+			<li class="shop__item">
+				<a href="#">
+					<div class="shop__icon-wrap">
+						<div class="shop__icon shop__icon_1"></div>
+					</div>
 
-		<li class="shop__item">
-			<a href="#">
-				<div class="shop__icon-wrap">
-					<div class="shop__icon shop__icon_4"></div>
-				</div>
-				
-				<h3 class="shop__category-name">Les fleurs coupées</h3>
-			</a>
-		</li>
+					<h3 class="shop__category-name">La pépinière</h3>
+				</a>
+			</li>
 
-		<li class="shop__item">
-			<a href="#">
-				<div class="shop__icon-wrap">
-					<div class="shop__icon shop__icon_5"></div>
-				</div>
-				
-				<h3 class="shop__category-name">L’outillage</h3>
-			</a>
-		</li>
+			<li class="shop__item">
+				<a href="#">
+					<div class="shop__icon-wrap">
+						<div class="shop__icon shop__icon_2"></div>
+					</div>
 
-		<li class="shop__item">
-			<a href="#">
-				<div class="shop__icon-wrap">
-					<div class="shop__icon shop__icon_6"></div>
-				</div>
-				
-				<h3 class="shop__category-name">Le terreau</h3>
-			</a>
-		</li>
+					<h3 class="shop__category-name">Les légumes et les plantes à massifs</h3>
+				</a>
+			</li>
 
-		<li class="shop__item">
-			<a href="#">
-				<div class="shop__icon-wrap">
-					<div class="shop__icon shop__icon_7"></div>
-				</div>
-				
-				<h3 class="shop__category-name">Les produits et les engrais</h3>
-			</a>
-		</li>
+			<li class="shop__item">
+				<a href="#">
+					<div class="shop__icon-wrap">
+						<div class="shop__icon shop__icon_3"></div>
+					</div>
 
-		<li class="shop__item">
-			<a href="#">
-				<div class="shop__icon-wrap">
-					<div class="shop__icon shop__icon_8"></div>
-				</div>
-				
-				<h3 class="shop__category-name">Les semis</h3>
-			</a>
-		</li>
+					<h3 class="shop__category-name">Les plantes d’intérieur</h3>
+				</a>
+			</li>
 
-		<li class="shop__item">
-			<a href="#">
-				<div class="shop__icon-wrap">
-					<div class="shop__icon shop__icon_9"></div>
-				</div>
-				
-				<h3 class="shop__category-name">La poterie</h3>
-			</a>
-		</li>
+			<li class="shop__item">
+				<a href="#">
+					<div class="shop__icon-wrap">
+						<div class="shop__icon shop__icon_4"></div>
+					</div>
 
-		<li class="shop__item">
-			<a href="#">
-				<div class="shop__icon-wrap">
-					<div class="shop__icon shop__icon_10"></div>
-				</div>
-				
-				<h3 class="shop__category-name">Les plantes artificielles</h3>
-			</a>
-		</li>
+					<h3 class="shop__category-name">Les fleurs coupées</h3>
+				</a>
+			</li>
 
-		<li class="shop__item">
-			<a href="#">
-				<div class="shop__icon-wrap">
-					<div class="shop__icon shop__icon_11"></div>
-				</div>
-				
-				<h3 class="shop__category-name">Les produits gourmets</h3>
-			</a>
-		</li>
+			<li class="shop__item">
+				<a href="#">
+					<div class="shop__icon-wrap">
+						<div class="shop__icon shop__icon_5"></div>
+					</div>
 
-		<li class="shop__item">
-			<a href="#">
-				<div class="shop__icon-wrap">
-					<div class="shop__icon shop__icon_12"></div>
-				</div>
+					<h3 class="shop__category-name">L’outillage</h3>
+				</a>
+			</li>
 
-				<h3 class="shop__category-name">Nourriture animaux</h3>
-			</a>
-		</li>
-	</ul>
+			<li class="shop__item">
+				<a href="#">
+					<div class="shop__icon-wrap">
+						<div class="shop__icon shop__icon_6"></div>
+					</div>
+
+					<h3 class="shop__category-name">Le terreau</h3>
+				</a>
+			</li>
+
+			<li class="shop__item">
+				<a href="#">
+					<div class="shop__icon-wrap">
+						<div class="shop__icon shop__icon_7"></div>
+					</div>
+
+					<h3 class="shop__category-name">Les produits et les engrais</h3>
+				</a>
+			</li>
+
+			<li class="shop__item">
+				<a href="#">
+					<div class="shop__icon-wrap">
+						<div class="shop__icon shop__icon_8"></div>
+					</div>
+
+					<h3 class="shop__category-name">Les semis</h3>
+				</a>
+			</li>
+
+			<li class="shop__item">
+				<a href="#">
+					<div class="shop__icon-wrap">
+						<div class="shop__icon shop__icon_9"></div>
+					</div>
+
+					<h3 class="shop__category-name">La poterie</h3>
+				</a>
+			</li>
+
+			<li class="shop__item">
+				<a href="#">
+					<div class="shop__icon-wrap">
+						<div class="shop__icon shop__icon_10"></div>
+					</div>
+
+					<h3 class="shop__category-name">Les plantes artificielles</h3>
+				</a>
+			</li>
+
+			<li class="shop__item">
+				<a href="#">
+					<div class="shop__icon-wrap">
+						<div class="shop__icon shop__icon_11"></div>
+					</div>
+
+					<h3 class="shop__category-name">Les produits gourmets</h3>
+				</a>
+			</li>
+
+			<li class="shop__item">
+				<a href="#">
+					<div class="shop__icon-wrap">
+						<div class="shop__icon shop__icon_12"></div>
+					</div>
+
+					<h3 class="shop__category-name">Nourriture animaux</h3>
+				</a>
+			</li>
+		</ul>
+	</div>
 </div>
 <div class="main__additionally additionally">
-	<h2 class="additionally__title">En encore</h2>
-	
-	<div class="additionally__items-wrap">
-		<a class="additionally__item additionally__item_1" href="#">
-			<span class="additionally__name">Notre équipe</span>
-		</a>
-		
-		<a class="additionally__item additionally__item_2" href="#">
-			<span class="additionally__name">Nos services</span>
-		</a>
-		
-		<a class="additionally__item additionally__item_3" href="#">
-			<span class="additionally__name">La carte privilège</span>
-		</a>
-		
-		<a class="additionally__item additionally__item_4" href="#">
-			<span class="additionally__name">Offres d’emploi</span>
-		</a>
-		
-		<a class="additionally__item additionally__item_5" href="#">
-			<span class="additionally__name">Nos partenaires</span>
-		</a>
+	<div class="container">
+		<h2 class="additionally__title">En encore</h2>
+
+		<div class="additionally__items-wrap">
+			<a class="additionally__item additionally__item_1" href="#">
+				<span class="additionally__name">Notre équipe</span>
+			</a>
+
+			<a class="additionally__item additionally__item_2" href="#">
+				<span class="additionally__name">Nos services</span>
+			</a>
+
+			<a class="additionally__item additionally__item_3" href="#">
+				<span class="additionally__name">La carte privilège</span>
+			</a>
+
+			<a class="additionally__item additionally__item_4" href="#">
+				<span class="additionally__name">Offres d’emploi</span>
+			</a>
+
+			<a class="additionally__item additionally__item_5" href="#">
+				<span class="additionally__name">Nos partenaires</span>
+			</a>
+		</div>
 	</div>
 </div>
-	</div>
 </main>
 
 <footer class="footer">

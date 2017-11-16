@@ -76,8 +76,7 @@
 
 .owl
 	position relative
-	background-color #ccc
-	padding 20px 7px 20px 22px
+	padding 20px 7px 20px 0
 	
 	&__text
 		display inline-block
@@ -95,7 +94,7 @@
 		transition all 1s ease
 		opacity 0
 		transform scale(.3) translateX(300px)
-		vertical-align middle
+		margin-right 22px
 		
 		&:before
 			content ''
@@ -128,7 +127,8 @@
 		position relative
 		display inline-block
 		sprite-owl-back()
-		vertical-align middle
+		vertical-align top
+		margin-top 15px
 		
 		&:before
 			content ""

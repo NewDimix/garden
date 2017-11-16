@@ -64,7 +64,7 @@ $(function () {
     $('.js-escargot').toggleClass('move');
   }, 1400);
 
-  $('.js-slider-slick').slick({
+  $('.js-main-slider').slick({
     dots: true,
     infinite: true,
     speed: 900,
@@ -77,16 +77,16 @@ $(function () {
     nextArrow: '<div class="slider-slick__next-wrap"><div class="slider-slick__next-img"></div></div>'
   });
 
-  $('.js-variable-width').slick({
+  $('.js-news-slider').slick({
     speed: 300,
     slidesToShow: 1,
     centerMode: false,
     variableWidth: true,
+    arrows: false,
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 1600,
         settings: {
-          arrows: false,
           centerMode: true,
           slidesToShow: 3
         }
