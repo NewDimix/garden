@@ -70,8 +70,9 @@ $(function () {
     speed: 900,
     fade: true,
     cssEase: 'linear',
-	mobileFirst: true,
+    mobileFirst: true,
     autoplay: true,
+    adaptiveHeight: true,
     autoplaySpeed: 5000,
 	prevArrow: '<div class="slider-slick__prev-wrap"><div class="slider-slick__prev-img"></div></div>',
     nextArrow: '<div class="slider-slick__next-wrap"><div class="slider-slick__next-img"></div></div>'

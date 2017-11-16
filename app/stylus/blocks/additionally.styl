@@ -10,7 +10,8 @@
 		margin-bottom 32px
 		
 	&__items-wrap
-		margin 0 auto
+		margin-right auto
+		margin-left auto
 		padding 0 10px
 		font-size 0
 		@media (min-width 1170px)
@@ -20,8 +21,7 @@
 		position relative
 		display inline-block
 		min-height 219px
-		background url(../img/additionally-back.png) 0 100% no-repeat
-		background-color $green-light-color
+		background $green-light-color url(../img/additionally-back.png) 0 100% no-repeat
 		padding-top 140px
 		margin-bottom 16px
 		vertical-align top
@@ -132,8 +132,9 @@
 		font-size 18px
 		text-transform uppercase
 		position relative
-		word-wrap break-word
 		text-shadow 0 -1px 1px $green-light-color, 0 -1px 1px $green-light-color, 0 1px 1px $green-light-color, 0 1px 1px $green-light-color, -1px 0 1px $green-light-color, 1px 0 1px $green-light-color, -1px 0 1px $green-light-color, 1px 0 1px $green-light-color, -1px -1px 1px $green-light-color, 1px -1px 1px $green-light-color, -1px 1px 1px $green-light-color, 1px 1px 1px $green-light-color, -1px -1px 1px $green-light-color, 1px -1px 1px $green-light-color, -1px 1px 1px $green-light-color, 1px 1px 1px $green-light-color
+		letter-spacing 0.01em
+		hyphens()
 		
 		&:before
 			content ""
