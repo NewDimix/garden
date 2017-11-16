@@ -20,19 +20,24 @@
 			background-size cover
 			
 	&__text
+		max-width 1170px
+		margin 0 auto
+		padding 20px 25px
 		> p
 			font-family 'HelveticaNeue-Roman'
 			font-style italic
 			color #ffffff
 			font-size 8vw
 			line-height 36px
-			max-width 1111px
-			margin 0 auto
-			padding 20px 25px
+			margin 0
+			margin-bottom 10px
+			padding 0
 
 			@media (min-width 480px)
 				font-size 40px
-				padding 44px 25px
+				
+			&:last-child
+				margin-bottom 0
 			
 	&__prev-wrap
 		width 36px
