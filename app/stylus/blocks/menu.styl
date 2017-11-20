@@ -1,312 +1,309 @@
 menu__icon()
-	cursor pointer
-	border-radius 1px
-	height 3px
-	width 25px
-	background-color white
-	position absolute
-	display block
-	content ''
-	transition all .2s ease .2s, transform .2s ease 0s
-	
+    cursor pointer
+    border-radius 1px
+    height 3px
+    width 25px
+    background-color white
+    position absolute
+    display block
+    content ''
+    transition all .2s ease .2s, transform .2s ease 0s
+
 ul()
-	list-style none
-	margin 0
-	padding 0
-	position relative
-	top 100%
-	left 0
-	width 100%
-	background-color white
-	overflow hidden
-	z-index 9999
-	height auto
-	display none
-	transition all 0s ease-out 0s
+    list-style none
+    margin 0
+    padding 0
+    position relative
+    top 100%
+    left 0
+    width 100%
+    background-color white
+    overflow hidden
+    z-index 9999
+    height auto
+    display none
+    transition all 0s ease-out 0s
 
-	@media (min-width 480px)
-		position static
-		background-color transparent
-		display block
-		text-align center
-		overflow visible
+    @media (min-width 480px)
+        position static
+        background-color transparent
+        display block
+        text-align center
+        overflow visible
 
-	@media (min-width 768px)
-		text-align right
-		padding-right 10px
-		
-	@media (min-width 1190px)
-		padding-right 0
-		
+    @media (min-width 768px)
+        text-align right
+
 li()
-	display block
-	margin 0
-	position relative
-	border-bottom 1px solid lightness($green-dark-color, 40%)
-	
-	@media (min-width 480px)
-		display inline-block
-		margin-right 6%
-		border none
-		
-	@media (min-width 768px)
-		margin-right 23px
-		
-	&:last-child
-		@media (min-width 480px)
-			border-bottom none
-		@media (min-width 480px)
-			margin-right 0
-		
+    display block
+    margin 0
+    position relative
+    border-bottom 1px solid lightness($green-dark-color, 40%)
+
+    @media (min-width 480px)
+        display inline-block
+        margin-right 6%
+        border none
+
+    @media (min-width 768px)
+        margin-right 23px
+
+    &:last-child
+        @media (min-width 480px)
+            border-bottom none
+        @media (min-width 480px)
+            margin-right 0
+
 a()
-	display inline-block
-	width 100%
-	font-size 14px
-	font-weight 700
-	text-transform uppercase
-	color $green-dark-color
-	text-decoration none
-	padding 17px 30px 17px 17px
-	
-	@media (min-width 480px)
-		padding 17px 0 33px
-		color $green-dark-color
-		
-	&:after
-		@media (min-width 480px)
-			background-color $green-light-color
-			display block
-			content ""
-			height 1px
-			width 0%
-			left 50%
-			top 57.5%
-			position absolute
-			transition width .3s ease-in-out
-			transform translateX(-50%)
-			
-	&:hover:after
-		@media (min-width 480px)
-			width 80%
+    display inline-block
+    width 100%
+    font-size 14px
+    font-weight 700
+    text-transform uppercase
+    color $green-dark-color
+    text-decoration none
+    padding 17px 30px 17px 17px
+
+    @media (min-width 480px)
+        padding 17px 0 33px
+        color $green-dark-color
+
+    &:after
+        @media (min-width 480px)
+            background-color $green-light-color
+            display block
+            content ""
+            height 1px
+            width 0%
+            left 50%
+            top 57.5%
+            position absolute
+            transition width .3s ease-in-out
+            transform translateX(-50%)
+
+    &:hover:after
+        @media (min-width 480px)
+            width 80%
 
 .menu
-	position relative
-	
-	&__btn
-		width 100%
-		background-color $green-dark-color
-		width 100%
-		text-align left
-		position relative
-		cursor pointer
-		user-select none
-		padding-left 45px
-		
-		@media (min-width 480px)
-			display none
-			
-		&.open
-			.menu__icon
-				background-color transparent
-				
-				&:before
-					transform rotate(45deg)
-					top 0
-					transition all .2s ease 0s, transform .2s ease .2s
-					
-				&:after
-					transform rotate(-45deg)
-					bottom 0
-					transition all .2s ease 0s, transform .2s ease .2s
-					
-	&__icon
-		position absolute
-		top 50%
-		left 10px
-		transform translatey(-50%)
-		menu__icon()
-		
-		&:before, &:after
-			menu__icon()
-			
-		&:before
-			top 8px
-			
-		&:after
-			bottom 8px
-			
-	&__title
-		color white
-		line-height 40px
-		text-transform uppercase
-		font-size 18px
-		font-weight 700
-		
-	&__ul
-		ul()
-			
-		> li 
-			li()
-				
-			&:last-child
-				> ul
-					@media (min-width 480px)
-						right -35px
-						
-					@media (min-width 768px)
-						right -20px
-						
-					@media (min-width 1470px)
-						right inherit
-						
-			&:nth-last-child(2)
-				> ul
-					@media (min-width 480px)
-						right -70px
-						
-					@media (min-width 1470px)
-						right inherit
-						
-			> a 
-				a()
-					
-			> span
-				@extend .menu__ul > li > a
-				cursor pointer
-				
-				&:before
-					@media (min-width 480px)
-						display none
-						
-			&.active
-				> a
-					@media (min-width 480px)
-						color $green-light-color
-						
-					&:after
-						@media (min-width 480px)
-							background-color $green-light-color
-							display block
-							content ""
-							height 1px
-							width 80%
-							left 50%
-							bottom 12px
-							position absolute
-							transition width .3s ease-in-out
-							transform translateX(-50%)
-							
-				> span
-					@extend .menu__ul > li.active > a
-					
-			> ul
-				ul()
-				background-color white
-				
-				@media (min-width 480px)
-					display none
-					position absolute
-					left inherit
-					top 100%
-					width 170px
-					text-align left
-					background-color white
-					box-shadow 0 4px 10px rgba(0,0,0,0.5)
-					
-				@media (min-width 768px)
-					width 200px
-					text-align left
-					
-				> li 
-					li()
-					border-bottom none
-					border-top 1px solid #ccc
-					
-					&:first-child
-						@media (max-width 480px)
-							border-top-color lightness($green-dark-color, 40%)
-							
-					@media (min-width 480px)
-						display block
-						margin-right 0
-						border-top 1px solid #ccc
-						
-					@media (min-width 768px)
-						margin-right 0
-						
-					> a
-						a()
-						padding 10px 30px 10px 34px
-						color lightness($green-dark-color, 35%)
-						
-						@media (min-width 480px)
-							padding 10px 20px 10px 15px
-							
-						&:after
-							display none !important
-							
-					> span
-						@extend .menu__ul > li > ul > li > a
-						cursor pointer
-						
-						&.open
-							background-color rgba(177, 255, 0, 0.1)
-							
-					> ul
-						ul()
-						top 0
-						
-						@media (min-width 480px)
-							display none
-							text-align left
-							
-						@media (min-width 768px)
-							text-align left
-							
-						> li 
-							li()
-							border-bottom 0
-							border-top 1px solid #ccc
-							
-							@media (min-width 480px)
-								display block
-								margin-right 0
-								border-top 1px solid #ccc
-								
-							@media (min-width 768px)
-								margin-right 0
-								
-							> a
-								a()
-								color $green-light-color
-								padding 10px 5px 10px 51px
-								
-								@media (min-width 480px)
-									padding 10px 5px 10px 23px
-									color $green-light-color
-									
-								&:after
-									display none !important
-									
-		span
-			position relative
-			
-			&:before
-				content ""
-				position absolute
-				right 5%
-				top 50%
-				transform translateY(-70%) rotate(45deg)
-				width 5px
-				height 5px
-				border 4px solid $green-light-color
-				border-left-color transparent
-				border-top-color transparent
-				transition all .5s ease
-				
-			&.open
-				&:before
-					border 4px solid $green-light-color
-					border-right-color transparent
-					border-bottom-color transparent
-					transform translateY(-30%) rotate(45deg)
+    position relative
+
+    &__btn
+        width 100%
+        background-color $green-dark-color
+        width 100%
+        text-align left
+        position relative
+        cursor pointer
+        user-select none
+        padding-left 45px
+        border none
+
+        @media (min-width 480px)
+            display none
+
+        &.open
+            .menu__icon
+                background-color transparent
+
+                &:before
+                    transform rotate(45deg)
+                    top 0
+                    transition all .2s ease 0s, transform .2s ease .2s
+
+                &:after
+                    transform rotate(-45deg)
+                    bottom 0
+                    transition all .2s ease 0s, transform .2s ease .2s
+
+    &__icon
+        position absolute
+        top 50%
+        left 10px
+        transform translatey(-50%)
+        menu__icon()
+
+        &:before, &:after
+            menu__icon()
+
+        &:before
+            top 8px
+
+        &:after
+            bottom 8px
+
+    &__title
+        color white
+        line-height 40px
+        text-transform uppercase
+        font-size 18px
+        font-weight 700
+
+    &__ul
+        ul()
+
+        > li
+            li()
+
+            &:last-child
+                > ul
+                    @media (min-width 480px)
+                        right -35px
+
+                    @media (min-width 768px)
+                        right -20px
+
+                    @media (min-width 1470px)
+                        right inherit
+
+            &:nth-last-child(2)
+                > ul
+                    @media (min-width 480px)
+                        right -70px
+
+                    @media (min-width 1470px)
+                        right inherit
+
+            > a
+                a()
+
+            > span
+                @extend .menu__ul > li > a
+                cursor pointer
+
+                &:before
+                    @media (min-width 480px)
+                        display none
+
+            &.active
+                > a
+                    @media (min-width 480px)
+                        color $green-light-color
+
+                    &:after
+                        @media (min-width 480px)
+                            background-color $green-light-color
+                            display block
+                            content ""
+                            height 1px
+                            width 80%
+                            left 50%
+                            bottom 12px
+                            position absolute
+                            transition width .3s ease-in-out
+                            transform translateX(-50%)
+
+                > span
+                    @extend .menu__ul > li.active > a
+
+            > ul
+                ul()
+                background-color white
+
+                @media (min-width 480px)
+                    display none
+                    position absolute
+                    left inherit
+                    top 100%
+                    width 170px
+                    text-align left
+                    background-color white
+                    box-shadow 0 4px 10px rgba(0,0,0,0.5)
+
+                @media (min-width 768px)
+                    width 200px
+                    text-align left
+
+                > li
+                    li()
+                    border-bottom none
+                    border-top 1px solid #ccc
+
+                    &:first-child
+                        @media (max-width 480px)
+                            border-top-color lightness($green-dark-color, 40%)
+
+                    @media (min-width 480px)
+                        display block
+                        margin-right 0
+                        border-top 1px solid #ccc
+
+                    @media (min-width 768px)
+                        margin-right 0
+
+                    > a
+                        a()
+                        padding 10px 30px 10px 34px
+                        color lightness($green-dark-color, 35%)
+
+                        @media (min-width 480px)
+                            padding 10px 20px 10px 15px
+
+                        &:after
+                            display none !important
+
+                    > span
+                        @extend .menu__ul > li > ul > li > a
+                        cursor pointer
+
+                        &.open
+                            background-color rgba(177, 255, 0, 0.1)
+
+                    > ul
+                        ul()
+                        top 0
+
+                        @media (min-width 480px)
+                            display none
+                            text-align left
+
+                        @media (min-width 768px)
+                            text-align left
+
+                        > li
+                            li()
+                            border-bottom 0
+                            border-top 1px solid #ccc
+
+                            @media (min-width 480px)
+                                display block
+                                margin-right 0
+                                border-top 1px solid #ccc
+
+                            @media (min-width 768px)
+                                margin-right 0
+
+                            > a
+                                a()
+                                color $green-light-color
+                                padding 10px 5px 10px 51px
+
+                                @media (min-width 480px)
+                                    padding 10px 5px 10px 23px
+                                    color $green-light-color
+
+                                &:after
+                                    display none !important
+
+        span
+            position relative
+
+            &:before
+                content ""
+                position absolute
+                right 5%
+                top 50%
+                transform translateY(-70%) rotate(45deg)
+                width 5px
+                height 5px
+                border 4px solid $green-light-color
+                border-left-color transparent
+                border-top-color transparent
+                transition all .5s ease
+
+            &.open
+                &:before
+                    border 4px solid $green-light-color
+                    border-right-color transparent
+                    border-bottom-color transparent
+                    transform translateY(-30%) rotate(45deg)

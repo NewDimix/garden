@@ -1,157 +1,159 @@
 .additionally
-	text-align center
-	padding 20px 0 0
-	
-	@media (min-width 480px)
-		padding 49px 0 0
-		
-	&__title
-		section-title()
-		margin-bottom 32px
-		
-	&__items-wrap
-		margin-right auto
-		margin-left auto
-		padding 0 10px
-		font-size 0
-		@media (min-width 1170px)
-			padding 0
-		
-	&__item
-		position relative
-		display inline-block
-		min-height 219px
-		background $green-light-color url(../img/additionally-back.png) 0 100% no-repeat
-		padding-top 140px
-		margin-bottom 16px
-		vertical-align top
-		overflow hidden
-		
-		@media (max-width 399px)
-			width 80%
-			
-			&:last-child
-				margin-bottom 0
-		
-		@media (min-width 400px) and (max-width 479px)
-			width 60%
-			
-		@media (min-width 480px) and (max-width 623px)
-			width 48%
-			margin-right 2%
-			
-			&:nth-child(2n)
-				margin-right 0
-				
-			&:last-child
-				margin-right 0
-				margin-bottom 0
-				
-		@media (min-width 624px) and (max-width 767px)
-			width 38%
-			margin-right 2%
-			
-			&:nth-child(2n)
-				margin-right 0
-				
-			&:last-child
-				margin-right 0
-				margin-bottom 0
-			
-		@media (min-width 768px) and (max-width 991px)
-			width 32%
-			margin-right 2%
-				
-			&:nth-child(3n)
-				margin-right 0
-				
-			&:nth-last-child(-n + 2)
-				margin-bottom 0
-				
-			&:last-child
-				margin-right 0
-				
-		@media (min-width 992px) and (max-width 1169px)
-			width 23.5%
-			margin-right 2%
-				
-			&:nth-child(4n)
-				margin-right 0
-				
-			&:last-child
-				margin-right 0
-				margin-bottom 0
-				
-		@media (min-width 1170px)
-			width 18.4%
-			margin-right 2%
-			margin-bottom 0
-				
-			&:last-child
-				margin-right 0
-				
-		&:hover
-			.additionally__name:after
-				width 100%
-				
-		&:hover
-			.additionally__name:before
-				top -60px
-				
-		&_1
-			.additionally__name
-				&:before
-					sprite-additionally-icon1()
-				
-		&_2
-			.additionally__name
-				&:before
-					sprite-additionally-icon2()
-				
-		&_3
-			.additionally__name
-				&:before
-					sprite-additionally-icon3()
-				
-		&_4
-			.additionally__name
-				&:before
-					sprite-additionally-icon4()
-				
-		&_5
-			.additionally__name
-				&:before
-					sprite-additionally-icon5()
-				
-	&__name
-		display inline-block
-		max-width 90%
-		margin 0 8px 8px
-		font-weight 500
-		color white
-		font-size 18px
-		text-transform uppercase
-		position relative
-		text-shadow 0 -1px 1px $green-light-color, 0 -1px 1px $green-light-color, 0 1px 1px $green-light-color, 0 1px 1px $green-light-color, -1px 0 1px $green-light-color, 1px 0 1px $green-light-color, -1px 0 1px $green-light-color, 1px 0 1px $green-light-color, -1px -1px 1px $green-light-color, 1px -1px 1px $green-light-color, -1px 1px 1px $green-light-color, 1px 1px 1px $green-light-color, -1px -1px 1px $green-light-color, 1px -1px 1px $green-light-color, -1px 1px 1px $green-light-color, 1px 1px 1px $green-light-color
-		letter-spacing 0.01em
-		hyphens()
-		
-		&:before
-			content ""
-			position absolute
-			top -45px
-			left 50%
-			transform translate(-50%, -50%)
-			transition all .3s cubic-bezier(.73,-2,.21,3)
-			
-		&:after
-			background-color white
-			display block
-			content ""
-			height 2px
-			width 0%
-			left 50%
-			bottom -5px
-			position absolute
-			transition width .2s ease-in-out
-			transform translateX(-50%)
+    text-align center
+    padding 20px 0 0
+
+    @media (min-width 480px)
+        padding 49px 0 0
+
+    &__title
+        section-title()
+        margin-bottom 32px
+
+    &__items-wrap
+        margin-right auto
+        margin-left auto
+        padding 0 10px
+        font-size 0
+        @media (min-width 1170px)
+            padding 0
+
+    &__item
+        position relative
+        display inline-block
+        min-height 219px
+        background $green-light-color url(../img/additionally-back.png) 0 100% no-repeat
+        padding-top 140px
+        margin-bottom 16px
+        vertical-align top
+        overflow hidden
+
+        @media (max-width 399px)
+            width 80%
+
+            &:last-child
+                margin-bottom 0
+
+        @media (min-width 400px) and (max-width 479px)
+            width 60%
+
+        @media (min-width 480px) and (max-width 623px)
+            width 48%
+            margin-right 2%
+
+            &:nth-child(2n)
+                margin-right 0
+
+            &:last-child
+                margin-right 0
+                margin-bottom 0
+
+        @media (min-width 624px) and (max-width 767px)
+            width 38%
+            margin-right 2%
+
+            &:nth-child(2n)
+                margin-right 0
+
+            &:last-child
+                margin-right 0
+                margin-bottom 0
+
+        @media (min-width 768px) and (max-width 991px)
+            width 32%
+            margin-right 2%
+
+            &:nth-child(3n)
+                margin-right 0
+
+            &:nth-last-child(-n + 2)
+                margin-bottom 0
+
+            &:last-child
+                margin-right 0
+
+        @media (min-width 992px) and (max-width 1169px)
+            width 25%
+            margin-right 2%
+
+            &:nth-child(3n)
+                margin-right 0
+
+            &:nth-last-child(-n + 2)
+                margin-bottom 0
+
+            &:last-child
+                margin-right 0
+
+        @media (min-width 1170px)
+            width 18.4%
+            margin-right 2%
+            margin-bottom 0
+
+            &:last-child
+                margin-right 0
+
+        &:hover
+            .additionally__name:after
+                width 100%
+
+        &:hover
+            .additionally__name:before
+                top -60px
+
+        &_1
+            .additionally__name
+                &:before
+                    sprite-additionally-icon1()
+
+        &_2
+            .additionally__name
+                &:before
+                    sprite-additionally-icon2()
+
+        &_3
+            .additionally__name
+                &:before
+                    sprite-additionally-icon3()
+
+        &_4
+            .additionally__name
+                &:before
+                    sprite-additionally-icon4()
+
+        &_5
+            .additionally__name
+                &:before
+                    sprite-additionally-icon5()
+
+    &__name
+        display inline-block
+        max-width 90%
+        margin 0 8px 8px
+        font-weight 500
+        color white
+        font-size 18px
+        text-transform uppercase
+        position relative
+        text-shadow 0 -1px 1px $green-light-color, 0 -1px 1px $green-light-color, 0 1px 1px $green-light-color, 0 1px 1px $green-light-color, -1px 0 1px $green-light-color, 1px 0 1px $green-light-color, -1px 0 1px $green-light-color, 1px 0 1px $green-light-color, -1px -1px 1px $green-light-color, 1px -1px 1px $green-light-color, -1px 1px 1px $green-light-color, 1px 1px 1px $green-light-color, -1px -1px 1px $green-light-color, 1px -1px 1px $green-light-color, -1px 1px 1px $green-light-color, 1px 1px 1px $green-light-color
+        letter-spacing 0.01em
+        hyphens()
+
+        &:before
+            content ""
+            position absolute
+            top -45px
+            left 50%
+            transform translate(-50%, -50%)
+            transition all .3s cubic-bezier(.73,-2,.21,3)
+
+        &:after
+            background-color white
+            display block
+            content ""
+            height 2px
+            width 0%
+            left 50%
+            bottom -5px
+            position absolute
+            transition width .2s ease-in-out
+            transform translateX(-50%)
