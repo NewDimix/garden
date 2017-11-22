@@ -142,9 +142,20 @@ a()
     &__ul
         ul()
 
-        > li
+        ul
+            ul()
+
+        li
             li()
 
+        a
+            a()
+
+        span
+            @extend .menu__ul a
+            cursor pointer
+
+        > li
             &:last-child
                 > ul
                     @media (min-width 480px)
@@ -164,13 +175,7 @@ a()
                     @media (min-width 1470px)
                         right inherit
 
-            > a
-                a()
-
             > span
-                @extend .menu__ul > li > a
-                cursor pointer
-
                 &:before
                     @media (min-width 480px)
                         display none
@@ -197,7 +202,6 @@ a()
                     @extend .menu__ul > li.active > a
 
             > ul
-                ul()
                 background-color white
 
                 @media (min-width 480px)
@@ -215,7 +219,6 @@ a()
                     text-align left
 
                 > li
-                    li()
                     border-bottom none
                     border-top 1px solid #ccc
 
@@ -232,7 +235,6 @@ a()
                         margin-right 0
 
                     > a
-                        a()
                         padding 10px 30px 10px 34px
                         color lightness($green-dark-color, 35%)
 
@@ -250,8 +252,8 @@ a()
                             background-color rgba(177, 255, 0, 0.1)
 
                     > ul
-                        ul()
                         top 0
+                        padding-left 0
 
                         @media (min-width 480px)
                             display none
@@ -261,7 +263,6 @@ a()
                             text-align left
 
                         > li
-                            li()
                             border-bottom 0
                             border-top 1px solid #ccc
 
@@ -274,7 +275,6 @@ a()
                                 margin-right 0
 
                             > a
-                                a()
                                 color $green-light-color
                                 padding 10px 5px 10px 51px
 
