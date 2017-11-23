@@ -3,9 +3,9 @@ $(window).on('load', function () {
     $loader = $preloader.find('.loader__img');
   $loader.fadeOut();
   $preloader.delay(0).fadeOut('slow');
-	
+
   var isMobile = $('.js-menu-btn').is(":visible");
-	
+
 $('.js-menu-btn').click(function (event) {
   $('.js-menu-content').slideToggle();
   event.stopPropagation();
@@ -13,7 +13,7 @@ $('.js-menu-btn').click(function (event) {
   $('.js-menu-content > li span').removeClass('open');
   $('.js-menu-btn').toggleClass('open');
 });
-  
+
 $(document).mouseup(function (e) {
   var container = $('.js-menu li');
   if (container.has(e.target).length === 0) {
@@ -30,7 +30,7 @@ $(document).mouseup(function (e) {
     }
   }
 });
-  
+
 $(function () {
 
   $.myfn = function (li) {
@@ -41,7 +41,7 @@ $(function () {
 
       $(li + ' span').not(this).removeClass('open');
       $(this).toggleClass('open');
-      
+
       $(li).not(this).removeClass('active');
       $(this).parent().toggleClass('active');
     });
@@ -51,7 +51,7 @@ $(function () {
   $.myfn('.js-menu-content > li > ul > li');
 
 });
-  
+
   setTimeout(function () {
     $('.js-owl').toggleClass('jump');
   }, 1000);
@@ -59,7 +59,7 @@ $(function () {
   setTimeout(function () {
     $('.js-text').toggleClass('visible');
   }, 5500);
-	
+
   setTimeout(function () {
     $('.js-escargot').toggleClass('move');
   }, 1400);
@@ -74,7 +74,7 @@ $(function () {
     autoplay: true,
     adaptiveHeight: true,
     autoplaySpeed: 5000,
-	prevArrow: '<div class="slider-slick__prev-wrap"><div class="slider-slick__prev-img"></div></div>',
+    prevArrow: '<div class="slider-slick__prev-wrap"><div class="slider-slick__prev-img"></div></div>',
     nextArrow: '<div class="slider-slick__next-wrap"><div class="slider-slick__next-img"></div></div>'
   });
 
