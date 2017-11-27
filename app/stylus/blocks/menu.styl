@@ -1,9 +1,77 @@
+$xs = 480px // до какой ширины экрана доступно разворачивающееся меню
+$sm = 768px
+
+$menu-icon-bgc = white // цвет гамбургера и надписи "MENU"
+$menu-btn-c = white // цвет надписи "MENU"
+$menu-btn-bgc = $green-dark-color // цвет фона кнопки
+
+
+
+//////////////////////////////////////////// Mobile (xs):
+
+// 1 уровень меню:
+$menu-1-bgc-m = white // цвет фона
+$menu-1-c-m = $green-dark-color // цвет текста
+
+$menu-1-p-m = 17px 30px 17px 17px // padding для a/span
+
+$menu-1-bw-m = 1px // толщина border для li
+$menu-1-bc-m = $green-dark-color // цвет border для li
+
+// 2 уровень меню:
+$menu-2-bgc-m = white // цвет фона
+$menu-2-c-m = $green-dark-color // цвет текста
+
+$menu-2-p-m = 10px 30px 10px 34px // padding для a/span
+
+$menu-2-bw-m = 1px // толщина border для li
+$menu-2-bc-m = $green-light-color // цвет border для li
+
+// 3 уровень меню:
+$menu-3-bgc-m = white // цвет фона
+$menu-3-c-m = $green-light-color // цвет текста
+
+$menu-3-p-m = 10px 20px 10px 15px // padding для a/span
+
+$menu-3-bw-m = 1px // толщина border для li
+$menu-3-bc-m = #ccc // цвет border для li
+
+
+
+//////////////////////////////////////////// Desktop (sm):
+
+// 1 уровень меню:
+$menu-1-bgc-d = transparent // цвет фона
+$menu-1-c-d = $green-dark-color // цвет текста
+
+$menu-1-p-d = 17px 0 33px // padding для a/span
+
+// 2 уровень меню:
+$menu-2-bgc-d = white // цвет фона
+$menu-2-c-d = $green-dark-color // цвет текста
+
+$menu-2-p-d = 10px 20px 10px 15px // padding для a/span
+
+$menu-2-bw-d = 1px // толщина border для li
+$menu-2-bc-d = $green-dark-color // цвет border для li
+
+// 3 уровень меню:
+$menu-3-bgc-d = white // цвет фона
+$menu-3-c-d = $green-light-color // цвет текста
+
+$menu-3-p-d = 10px 20px 10px 15px // padding для a/span
+
+$menu-3-bw-d = 1px // толщина border для li
+$menu-3-bc-d = #ccc // цвет border для li
+
+
+
 menu__icon()
     cursor pointer
     border-radius 1px
     height 3px
     width 25px
-    background-color white
+    background-color $menu-icon-bgc
     position absolute
     display block
     content ''
@@ -11,49 +79,8 @@ menu__icon()
 
 ul()
     list-style none
-    margin 0
-    padding 0
-    position relative
-    top 100%
-    left 0
-    width 100%
-    background-color white
-    overflow hidden
     z-index 9999
-    height auto
-    display none
     transition all 0s ease-out 0s
-
-    @media (min-width 480px)
-        position static
-        background-color transparent
-        display block
-        text-align center
-        overflow visible
-
-    @media (min-width 768px)
-        text-align right
-
-li()
-    display block
-    margin 0
-    position relative
-    border-bottom 1px solid lightness($green-dark-color, 40%)
-    hyphens()
-
-    @media (min-width 480px)
-        display inline-block
-        margin-right 6%
-        border none
-
-    @media (min-width 768px)
-        margin-right 23px
-
-    &:last-child
-        @media (min-width 480px)
-            border-bottom none
-        @media (min-width 480px)
-            margin-right 0
 
 a()
     display inline-block
@@ -61,38 +88,32 @@ a()
     font-size 14px
     font-weight 700
     text-transform uppercase
-    color $green-dark-color
     text-decoration none
-    padding 17px 30px 17px 17px
-
-    @media (min-width 480px)
-        padding 17px 0 33px
-        color $green-dark-color
-
-    &:after
-        @media (min-width 480px)
-            background-color $green-light-color
-            display block
-            content ""
-            height 1px
-            width 0%
-            left 50%
-            top 57.5%
-            position absolute
-            transition width .3s ease-in-out
-            transform translateX(-50%)
-
-    &:hover:after
-        @media (min-width 480px)
-            width 80%
 
 .menu
     position relative
 
+    ul
+        ul()
+
+    li
+        hyphens()
+
+    a
+        a()
+
+    span
+        display inline-block
+        font-size 14px
+        font-weight 700
+        text-transform uppercase
+        text-decoration none
+        cursor pointer
+
     &__btn
         width 100%
-        background-color $green-dark-color
-        color white
+        background-color $menu-btn-bgc
+        color $menu-btn-c
         width 100%
         text-align left
         position relative
@@ -102,7 +123,7 @@ a()
         border none
         ellipsis()
 
-        @media (min-width 480px)
+        @media (min-width $xs)
             display none
 
         &.open
@@ -142,53 +163,105 @@ a()
         font-weight 700
 
     &__ul
-        ul()
+        background-color $menu-1-bgc-m
+        display none
+
+        @media (min-width $xs)
+            background-color $menu-1-bgc-d
+            display block
+            text-align center
+
+        @media (min-width $sm)
+            text-align right
 
         ul
-            ul()
-
-        li
-            li()
-
-        a
-            a()
+            display none
 
         span
-            @extend .menu__ul a
-            cursor pointer
+            width 100%
 
         > li
+            position relative
+            border-bottom $menu-1-bw-m solid $menu-1-bc-m
+
+            @media (min-width $xs)
+                display inline-block
+                margin-right 6%
+                border none
+
+            @media (min-width $sm)
+                margin-right 23px
+
+            &:first-child
+                > ul
+                    @media (min-width $xs)
+                        left 0
+
+            &:nth-child(2)
+                > ul
+                    @media (min-width $xs)
+                        left 50%
+                        transform translateX(-25%)
+
+            &:nth-child(3)
+                > ul
+                    @media (min-width $xs)
+                        left 50%
+                        transform translateX(-50%)
+
+            &:nth-child(4)
+                > ul
+                    @media (min-width $xs)
+                        left 50%
+                        transform translateX(-75%)
+
             &:last-child
+                @media (min-width $xs)
+                    margin-right 0
+
                 > ul
-                    @media (min-width 480px)
-                        right -35px
+                    @media (min-width $xs)
+                        right 0
 
-                    @media (min-width 768px)
-                        right -20px
+            > a
+                padding $menu-1-p-m
+                color $menu-1-c-m
 
-                    @media (min-width 1470px)
-                        right inherit
+                @media (min-width $xs)
+                    padding $menu-1-p-d
+                    color $menu-1-c-d
 
-            &:nth-last-child(2)
-                > ul
-                    @media (min-width 480px)
-                        right -70px
+                &:after
+                    @media (min-width $xs)
+                        background-color $green-light-color
+                        display block
+                        content ""
+                        height 1px
+                        width 0%
+                        left 50%
+                        top 57.5%
+                        position absolute
+                        transition width .3s ease-in-out
+                        transform translateX(-50%)
 
-                    @media (min-width 1470px)
-                        right inherit
+                &:hover:after
+                    @media (min-width $xs)
+                        width 80%
 
             > span
+                @extend .menu__ul > li > a
+
                 &:before
-                    @media (min-width 480px)
+                    @media (min-width $xs)
                         display none
 
             &.active
                 > a
-                    @media (min-width 480px)
+                    @media (min-width $xs)
                         color $green-light-color
 
                     &:after
-                        @media (min-width 480px)
+                        @media (min-width $xs)
                             background-color $green-light-color
                             display block
                             content ""
@@ -197,51 +270,47 @@ a()
                             left 50%
                             bottom 12px
                             position absolute
-                            transition width .3s ease-in-out
                             transform translateX(-50%)
 
                 > span
                     @extend .menu__ul > li.active > a
 
             > ul
-                background-color white
+                background-color $menu-2-bgc-m
+                text-align left
+                border-top $menu-1-bw-m solid $menu-1-bc-m
 
-                @media (min-width 480px)
+                @media (min-width $xs)
+                    background-color $menu-2-bgc-d
+                    border-top none
                     display none
                     position absolute
-                    left inherit
                     top 100%
                     width 170px
-                    text-align left
-                    background-color white
                     box-shadow 0 4px 10px rgba(0,0,0,0.5)
 
-                @media (min-width 768px)
+                @media (min-width $sm)
                     width 200px
-                    text-align left
 
                 > li
                     border-bottom none
-                    border-top 1px solid #ccc
+                    border-top $menu-2-bw-m solid $menu-2-bc-m
 
                     &:first-child
-                        @media (max-width 480px)
-                            border-top-color lightness($green-dark-color, 40%)
+                        @media (max-width $xs)
+                            border-top none
 
-                    @media (min-width 480px)
+                    @media (min-width $xs)
+                        border-top $menu-2-bw-d solid $menu-2-bc-d
                         display block
-                        margin-right 0
-                        border-top 1px solid #ccc
-
-                    @media (min-width 768px)
-                        margin-right 0
 
                     > a
-                        padding 10px 30px 10px 34px
-                        color lightness($green-dark-color, 35%)
+                        padding $menu-2-p-m
+                        color $menu-2-c-m
 
-                        @media (min-width 480px)
-                            padding 10px 20px 10px 15px
+                        @media (min-width $xs)
+                            padding $menu-2-p-d
+                            color $menu-2-c-d
 
                         &:after
                             display none !important
@@ -254,35 +323,33 @@ a()
                             background-color rgba(177, 255, 0, 0.1)
 
                     > ul
+                        background-color $menu-3-bgc-m
                         top 0
                         padding-left 0
+                        border-top $menu-2-bw-m solid $menu-2-bc-m
 
-                        @media (min-width 480px)
+                        @media (min-width $xs)
+                            background-color $menu-3-bgc-d
+                            border-top-color $menu-2-bc-d
                             display none
-                            text-align left
-
-                        @media (min-width 768px)
-                            text-align left
 
                         > li
-                            border-bottom 0
-                            border-top 1px solid #ccc
+                            border-top $menu-3-bw-m solid $menu-3-bc-m
 
-                            @media (min-width 480px)
+                            &:first-child
+                                border-top none
+
+                            @media (min-width $xs)
+                                border-top $menu-3-bw-d solid $menu-3-bc-d
                                 display block
-                                margin-right 0
-                                border-top 1px solid #ccc
-
-                            @media (min-width 768px)
-                                margin-right 0
 
                             > a
-                                color $green-light-color
+                                color $menu-3-c-m
                                 padding 10px 5px 10px 51px
 
-                                @media (min-width 480px)
+                                @media (min-width $xs)
+                                    color $menu-3-c-d
                                     padding 10px 5px 10px 23px
-                                    color $green-light-color
 
                                 &:after
                                     display none !important
@@ -305,7 +372,4 @@ a()
 
             &.open
                 &:before
-                    border 4px solid $green-light-color
-                    border-right-color transparent
-                    border-bottom-color transparent
-                    transform translateY(-30%) rotate(45deg)
+                    transform translateY(-30%) rotate(225deg)
